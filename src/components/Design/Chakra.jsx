@@ -3,6 +3,12 @@ import { useIsMobile } from "@/app/hooks/useIsMobile";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export function AnticlockwiseChakra({ className, name }) {
   const isMobile = useIsMobile();
@@ -31,11 +37,42 @@ export function AnticlockwiseChakra({ className, name }) {
           delay: 0.3,
         }}
       />
-      <div className="absolute flex justify-center cursor-pointer hover:bg-gray-200 hover:shadow-xl hover:round p-2 hover:rounded-full">
+      <div className="absolute flex justify-center cursor-pointer sm:hover:bg-gray-200 hover:shadow-xl hover:round p-2 hover:rounded-full">
         {name === "github" ? (
-          <FaGithub size={`${isMobile ? 20 : 30}`} />
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                {/* <IconComponent size={48} style={{ color }} /> */}
+                <a
+                  href="https://github.com/mohtasheem135"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub size={isMobile ? 20 : 30} />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Github</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         ) : (
-          <FaLinkedinIn size={`${isMobile ? 20 : 30}`} />
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                <a
+                  href="https://www.linkedin.com/in/mohtasheem-ejaz-683b36243/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedinIn size={`${isMobile ? 20 : 30}`} />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Linkedin</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         )}
       </div>
     </div>
@@ -71,9 +108,38 @@ export function ClockwiseChakra({ className, name }) {
       />
       <div className="absolute flex justify-center cursor-pointer hover:bg-gray-200 hover:shadow-xl hover:round p-2 hover:rounded-full">
         {name === "email" ? (
-          <MdEmail size={`${isMobile ? 20 : 30}`} />
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                <a
+                  href="mailto:mohtasheemejaz@gmail.com?subject=Hello&body=Hi, I would like to connect!"
+                  target="_blank"
+                >
+                  <MdEmail size={`${isMobile ? 20 : 30}`} />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Mailto : mohtasheemejaz@gmail.com</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         ) : (
-          <SiLeetcode size={`${isMobile ? 20 : 30}`} />
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                <a
+                  href="https://leetcode.com/u/mohtasheem135/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SiLeetcode size={`${isMobile ? 20 : 30}`} />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Leetcode</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         )}
       </div>
     </div>
