@@ -4,8 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  ClockwiseChakra,
-  AnticlockwiseChakra,
+  Chakra,
 } from "@/components/Design/Chakra";
 import { Playfair_Display } from "next/font/google";
 import { Source_Sans_3 } from "next/font/google";
@@ -20,7 +19,7 @@ const HomePage = () => {
   return (
     <div className="flex flex-col-reverse sm:flex-row pb-[50px]">
       {/* {!isMobile && ( */}
-      <div className="sm:w-1/2">
+      <div className="sm:w-1/2 cursor-default">
         <div className="sm:mt-[100px] px-[20px] sm:ml-[100px]">
           <h1
             className={`${playfair.className} flex text-[25px] sm:text-[35px] font-bold`}
@@ -41,9 +40,7 @@ const HomePage = () => {
             </motion.ul>
             <p className="ml-[165px] sm:ml-[225px]">here</p>
           </h1>
-          <p
-            className={`${source_sans.className} mt-[15px] sm:pr-[150px]`}
-          >
+          <p className={`${source_sans.className} mt-[15px] sm:pr-[150px]`}>
             I am currently employed as a full-time Software Developer at
             Charzer, where I have honed my expertise in cutting-edge web
             development technologies, including React.js, Next.js, Redux,
@@ -53,10 +50,29 @@ const HomePage = () => {
           </p>
         </div>
         <div className="sm:h-28 w-full mt-[0px] sm:mt-[50px] px-[70px] sm:px-[140px] flex">
-          <AnticlockwiseChakra name="github" />
-          <ClockwiseChakra className={`ml-[70px] sm:ml-[100px]`} name="email" />
-          <AnticlockwiseChakra className={`ml-[70px] sm:ml-[100px]`} />
-          <ClockwiseChakra className={`ml-[70px] sm:ml-[100px]`} />
+          <Chakra
+            name="github"
+            link="https://github.com/mohtasheem135"
+            isClockwise={true}
+          />
+          <Chakra
+            className="ml-[70px] sm:ml-[100px]"
+            name="email"
+            link="mailto:mohtasheemejaz@gmail.com?subject=Hello&body=Hi, I would like to connect!"
+            isClockwise={false}
+          />
+          <Chakra
+            className="ml-[70px] sm:ml-[100px]"
+            name="linkedin"
+            link="https://www.linkedin.com/in/mohtasheem-ejaz-683b36243/"
+            isClockwise={true}
+          />
+          <Chakra
+            className="ml-[70px] sm:ml-[100px]"
+            name="leetcode"
+            link="https://leetcode.com/u/mohtasheem135/"
+            isClockwise={false}
+          />
         </div>
       </div>
       {/* // )} */}

@@ -4,7 +4,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Playfair_Display } from "next/font/google";
 import { Source_Sans_3 } from "next/font/google";
@@ -21,7 +20,6 @@ const Contact = () => {
     phone: "",
     topic: "",
     messages: "",
-    subscribed: false,
   });
   const [loading, setLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -153,7 +151,7 @@ const Contact = () => {
                   className="h-24 outline-none bg-transparent rounded-xl border-2 border-gray-400 pl-6 text-gray-600 text-base placeholder:text-gray-400"
                   required
                 />
-                <div className="flex items-start space-x-2 -mt-6 pl-8">
+                {/* <div className="flex items-start space-x-2 -mt-6 pl-8">
                   <Checkbox
                     name="subscribed"
                     checked={formData.subscribed}
@@ -164,7 +162,7 @@ const Contact = () => {
                     I have subscribed to receive emails to enhance my
                     experience.
                   </p>
-                </div>
+                </div> */}
                 <Button
                   type="submit"
                   disabled={loading}
